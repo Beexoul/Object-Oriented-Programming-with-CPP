@@ -5,13 +5,13 @@ admitted. Details are:
 • Age
 • Gender
 • Nature of illness
-Modify Que no. 1 by adding data member Date of Birth (Implement concept of nested structure)
+ Now, modify Que no. 2 for 50 Patients. (Implement concept of array of structure)
 */
+
 #include <iostream>
 using namespace std;
-class Hospital
-{
-private:
+struct Hospital{
+
     string patient_name;
     int age;
     string gender;
@@ -22,54 +22,42 @@ private:
         int month;
         int year;
     } dob;
-public:
-    void initialize()
-    {
-        cout << "Enter Patient Name: " << endl;
-        cin >> patient_name;
-        fflush(stdin);
-        cout << "Enter Age: " << endl;
-        cin >> age;
-        fflush(stdin);
-        cout << "Enter Date of Birth (dd mm yyyy): " << endl;
-        cin >> dob.day >> dob.month >> dob.year;
-        fflush(stdin);
-        cout << "Enter Gender: " << endl;
-        cin >> gender;
-        fflush(stdin);
-        cout << "Enter Nature of Illness: " << endl;
-        cin >> nature_of_illness;
-        fflush(stdin);
         
-    }
-    void display()
-    {
-        cout << "Patient Name: " << patient_name << endl;
-        cout << "Age: " << age << endl;
-        cout << "Date of Birth: " << dob.day << "/" << dob.month << "/" << dob.year << endl;
-        cout << "Gender: " <<gender << endl;
-        cout << "Nature of Illness: " << nature_of_illness << endl;
-    }
+
 };
 int main(){
     Hospital h[50];
-    int n;
-    cout << "Enter number of patients: "<<endl;
-    cin>>n;
-    for(int i=0;i<n;i++)
-    {
-        cout << "Patient "<<i+1<<" Details: "<<endl;
-        h[i].initialize();
-    }
-    cout << " "<<endl;
-    cout << " "<<endl;
-    cout << "Display Patient Details: "<<endl;
-    cout << "_____________________________________________________"<<endl;
+    int n,i;
+    cout << "Enter Detais of Patients" << endl;
+    for(i=0;i<50;i++){
+        cout << i+1 << endl;
+        cout << "Enter Patient Name: " << endl;
+        cin >> h[i].patient_name;
+        fflush(stdin);
+        cout << "Enter Age: " << endl;
+        cin >> h[i].age;
+        fflush(stdin);
+        cout << "Enter Date of Birth (dd mm yyyy): " << endl;
+        cin >> h[i].dob.day >> h[i].dob.month >> h[i].dob.year;
+        fflush(stdin);
+        cout << "Enter Gender: " << endl;
+        cin >> h[i].gender;
+        fflush(stdin);
+        cout << "Enter Nature of Illness: " << endl;
+        cin >> h[i].nature_of_illness;
+        fflush(stdin);
 
-    for(int i=0;i<n;i++)
-    {
-        cout << "Patient "<<i+1<<" Details: "<<endl;
-        h[i].display();
+    }
+    cout << "Detais of Patients" << endl;
+    for(i=0;i<50;i++){
+
+    cout<< "------------------------" << endl;
+    cout << "Patient Name: " << h[i].patient_name << endl;
+    cout << "Age: " << h[i].age << endl;
+    cout << "Date of Birth: " << h[i].dob.day << "/" << h[i].dob.month << "/" << h[i].dob.year << endl;
+    cout << "Gender: " <<h[i].gender << endl;
+    cout << "Nature of Illness: " << h[i].nature_of_illness << endl;
+    
     }
     return 0;
 }

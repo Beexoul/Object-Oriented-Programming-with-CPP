@@ -1,11 +1,12 @@
 /*
-Create a new class named City that will have two member varibles CityName (char[20]), and
+Creat e a new class named City that will have two member varibles CityName (char[20]), and
 DistFromKtm (float).Add member functions to set and retrieve the CityName and DistanceFromKtm
 separately. Add new member function AddDistance that takes two arguments of class City and returns
 the sum of DistFromKtm of two arguments. In the main function, Initialize three city objects .Set the
 first and second City to be Pokhara and Dhangadi. Display the sum of DistFromKtm of Pokhara and
 Dhangadi calling AddDistance function of third City object.
 */
+
 #include <iostream>
 #include <cstring>
 using namespace std;

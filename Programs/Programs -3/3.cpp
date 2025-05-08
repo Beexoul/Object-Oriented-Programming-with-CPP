@@ -8,12 +8,13 @@ class Complex {
         float real;
         float imag;
     public:
-        void setData(float r, float i) {
-            real = r;
-            imag = i;
+        void setData() {
+            cout << "Enter real and imaginary: ";
+            cin >> real >> imag;
         }
         void showData() {
-            cout << "Real: " << real << ", Imaginary: " << imag << endl;
+            cout << "Sum of two complex numbers: ";
+            cout << real <<"+"<< "i"<<imag << endl;
         }
         Complex addComplex(Complex c) { 
             Complex temp;
@@ -24,19 +25,10 @@ class Complex {
 };
 int main() {
     Complex c1, c2, c3;
-    float r1, i1, r2, i2;
     
-    cout << "Enter real and imaginary part of first complex number: ";
-    cin >> r1 >> i1;
-    c1.setData(r1, i1);
-    
-    cout << "Enter real and imaginary part of second complex number: ";
-    cin >> r2 >> i2;
-    c2.setData(r2, i2);
-    
+    c1.setData();
+    c2.setData();
     c3 = c1.addComplex(c2); 
-    
-    cout << "Sum of two complex numbers: ";
     c3.showData();
     
     return 0;

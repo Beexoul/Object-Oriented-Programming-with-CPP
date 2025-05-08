@@ -19,8 +19,8 @@ class Height {
         Height addHeight(Height h) { 
             Height temp;
             temp.inches = inches + h.inches;
-            temp.feet = feet + h.feet + (temp.inches / 12); // Convert excess inches to feet
-            temp.inches %= 12; // Keep only the remaining inches
+            temp.feet = feet + h.feet + (temp.inches / 12);
+            temp.inches %= 12; 
             return temp;
         }
 };

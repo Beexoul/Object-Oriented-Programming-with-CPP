@@ -8,46 +8,34 @@ admitted. Details are:
 */
 
 #include <iostream>
+#include <string>
 using namespace std;
-class Hospital
-{
-private:
-    string patient_name;
+struct Hospital {
+    string patientName;
     int age;
     string gender;
-    string nature_of_illness;
-
-public:
-    void initialize()
-    {
-        cout << "Enter Patient Name: " << endl;
-        cin >> patient_name;
-        fflush(stdin);
-        cout << "Enter Age: " << endl;
-        cin >> age;
-        fflush(stdin);
-        cout << "Enter Gender: " << endl;
-        cin >> gender;
-        fflush(stdin);
-        cout << "Enter Nature of Illness: " << endl;
-        cin >> nature_of_illness;
-        fflush(stdin);
-    }
-    void display()
-    {
-        cout << "Patient Name: " << patient_name << endl;
-        cout << "Age: " << age << endl;
-        cout << "Gender" << gender << endl;
-        cout << "Nature of Illness: " << nature_of_illness << endl;
-        
-    }
+    string natureOfIllness;
 };
+int main() {
+    Hospital patient;
+    
+    cout << "Enter patient name: ";
+    getline(cin, patient.patientName);
+    
+    cout << "Enter age: ";
+    cin >> patient.age;
+    
+    cout << "Enter gender: ";
+    getline(cin, patient.gender);
+    cout << "Enter nature of illness: ";
+    getline(cin, patient.natureOfIllness);
+    cout << "\nPatient Details:\n";
+    cout << "Name: " << patient.patientName << endl;
+    cout << "Age: " << patient.age << endl;
+    cout << "Gender" << patient.gender << endl;
+    cout << "Nature of Illness: " << patient.natureOfIllness << endl;
 
-int main(){
-    Hospital h;
-    cout << "Enter Patient Details: " << endl;
-    h.initialize();
-    cout << "Patient Details: " << endl;
-    h.display();
     return 0;
 }
+
+

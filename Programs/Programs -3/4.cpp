@@ -20,10 +20,10 @@ class Time {
         Time addTime(Time t) { 
             Time temp;
             temp.seconds = seconds + t.seconds;
-            temp.minutes = minutes + t.minutes + (temp.seconds / 60); // Convert excess seconds to minutes
-            temp.seconds %= 60; // Keep only the remaining seconds
-            temp.hours = hours + t.hours + (temp.minutes / 60); // Convert excess minutes to hours
-            temp.minutes %= 60; // Keep only the remaining minutes
+            temp.minutes = minutes + t.minutes + (temp.seconds / 60); 
+            temp.seconds %= 60; 
+            temp.hours = hours + t.hours + (temp.minutes / 60);
+            temp.minutes %= 60;
             return temp;
         }
 };
